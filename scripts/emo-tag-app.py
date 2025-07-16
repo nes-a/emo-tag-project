@@ -289,4 +289,3 @@ if submit_button:
             ax.set_xlim(0, 100)
             plt.title("Emotion Percentage Breakdown")
             st.pyplot(fig)
-```
