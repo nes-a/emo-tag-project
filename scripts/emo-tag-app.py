@@ -1,15 +1,3 @@
-Okay, I've reviewed your `emo_tag_app.py` code, which serves as the Streamlit application for your Emo Tag model.
-
-Similar to the previous file, I've focused on removing:
-
-  * **Redundant or obvious comments**: Comments that state what the code clearly does.
-  * **Remnants of commented-out code**: Blocks that appear to be old versions of logic or temporary debugging, especially the category mappings and plotting section comments that are now fully implemented or superseded.
-  * **Placeholder comments** that don't add value for a public repository.
-
-I will keep comments that define constants, functions, or mark significant sections of the Streamlit application logic.
-
------
-
 ```python
 import streamlit as st
 import numpy as np
