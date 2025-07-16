@@ -1,0 +1,105 @@
+"""# Emo Tag Project
+
+This project provides a comprehensive solution for emotion tagging in text, featuring an LLM-based synthetic data generator, a fine-tuned Hugging Face transformer model for classification, and a user-friendly Streamlit web application for real-time inference.
+---
+
+## Features
+
+* **Synthetic Data Generation**: Utilize Ollama with a local LLM (e.g., Llama2) to generate custom synthetic text messages annotated with specific emotions or emotion pairs. This allows for dataset expansion tailored to nuanced emotional expressions.
+* **Multi-label Emotion Classification**: A Hugging Face transformer model (MiniLM-L12-H384-uncased) fine-tuned on the GoEmotions dataset combined with synthetic data. It's designed to predict multiple emotions present in a single text.
+* **Focal Loss & Class Weighting**: The model training incorporates Focal Loss and dynamic class weighting to effectively handle class imbalance inherent in emotion datasets, improving performance on less frequent emotions.
+* **Streamlit Web Application**: An intuitive web interface for interactive emotion prediction. Users can input text and visualize the predicted emotions with a percentage breakdown.
+
+---
+
+## Project Structure
+
+emotion-tagging-project/
+├── data/
+│ ├── go-emotions/ # GoEmotions dataset TSV files (train.tsv, dev.tsv, test.tsv)
+│ └── synthetic/ # Generated synthetic data (synthetic-emotion-data.csv)
+├── images/ # emo-tag-logo.svg
+├── models/
+│ └── emo-tag/ # Saved trained Hugging Face model and tokenizer
+├── scripts/
+│ ├── generate-messages.py # Script to generate synthetic messages using Ollama
+│ ├── emo-tag-model.py # Script for model training, evaluation, and saving
+│ └── emo-tag-app.py # Streamlit web application
+├── .gitignore # Specifies files/folders to be ignored by Git
+├── README.md # This README file
+└── requirements.txt # Python dependencies for the project
+
+
+---
+
+## Setup and Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/emotion-tagging-project.git
+cd emotion-tagging-project
+
+### 2. Set up Python Environment
+It's highly recommended to use a virtual environment:
+
+python -m venv venv
+source venv/bin/activate   # On Windows: venv\\Scripts\\activate
+
+### 3. Install Python Dependencies
+
+pip install -r requirements.txt
+
+### 4. Install and Run Ollama (for Synthetic Data Generation)
+Download Ollama: Follow the instructions on the Ollama website for your operating system.
+
+Run Ollama: Start the Ollama server.
+
+Download a Model:
+ollama run llama2
+
+You can then close the chat or leave it running; the generate-messages.py script will connect to the running Ollama server.
+
+## Data Preparation
+
+### 1. GoEmotions Dataset
+Download the GoEmotions dataset and place its train.tsv, dev.tsv, and test.tsv files into the data/go-emotions/ directory. You can typically find these files from the original GoEmotions GitHub repository.
+
+### 2. Generate Synthetic Data (Optional but Recommended)
+To enrich your dataset, you can generate synthetic messages using a local LLM via Ollama.
+
+python scripts/generate-messages.py
+This script will connect to your running Ollama instance, prompt the LLM to generate messages for various emotion types (including emotion pairs), and save them to data/synthetic/synthetic-emotion-data.csv.
+
+Note: You can adjust NUM_MESSAGES_PER_EMOTION_TYPE in generate-messages.py to control the total number of messages generated. Ensure Ollama is running and OLLAMA_MODEL in the script matches the model you pulled (e.g., "llama2").
+
+## Model Training
+
+The emo-tag-model.py script handles data loading, preprocessing, model fine-tuning, and evaluation. It combines the GoEmotions data with your generated synthetic data for training.
+
+Before running, ensure your data files are in the correct locations as specified above.
+
+python scripts/emo-tag-model.py
+The script will print training progress and evaluation metrics. The best performing model (based on f1_macro on the development set) will be saved to the models/emo-tag/ directory.
+
+WandB Integration: The script is set up to log training metrics to Weights & Biases. If you don't use WandB, you can disable it by setting the environment variable:
+
+bash
+export WANDB_DISABLED=true
+Or comment out wandb.login() in the script.
+
+## Run the Streamlit Application
+
+Once your model is trained and saved in models/emo-tag/, you can launch the interactive web application:
+streamlit run scripts/emo-tag-app.py
+
+This command will open the Streamlit application in your web browser, allowing you to input text and see real-time emotion predictions.
+
+## Contribution
+
+Feel free to fork the repository, open issues, or submit pull requests.
+
+## License
+
+MIT License. See LICENSE file for details.
+"""

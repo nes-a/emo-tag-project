@@ -1,0 +1,25 @@
+# requirements.txt
+
+# --- Core Machine Learning & Deep Learning ---
+torch==2.3.1             # PyTorch: Deep learning framework (explicitly used in emo-tag-app.py, emo-tag-model.py)
+transformers==4.42.3     # Hugging Face Transformers library (used in all three .py files)
+safetensors==0.4.3       # Required for loading/saving .safetensors model weights
+ollama==0.1.7            # For interacting with Ollama LLM (used in generate-synthetic-messages.py)
+
+# --- Data Handling & Analysis ---
+pandas==2.2.2            # Data manipulation and analysis (used in all three .py files)
+numpy==1.26.4            # Numerical computing (used in all three .py files)
+scikit-learn==1.5.0      # For metrics and data preprocessing (MultiLabelBinarizer, f1_score etc. in emo-tag-model.py)
+datasets==2.20.0         # Hugging Face Datasets library (used in emo-tag-model.py)
+
+# --- Visualization ---
+matplotlib==3.9.0        # For plotting (used in emo-tag-app.py and emo-tag-model.py)
+seaborn==0.13.2          # For enhanced visualizations (used in emo-tag-app.py and emo-tag-model.py)
+
+# --- Web Application ---
+streamlit==1.36.0        # For building the web application (used in emo-tag-app.py)
+
+# --- Training Utilities (Optional but Recommended) ---
+accelerate==0.31.0       # Hugging Face Accelerate for simplified distributed training/mixed precision
+                         # Often a dependency or useful alongside Transformers/PyTorch
+wandb==0.17.4            # Weights & Biases for experiment tracking (used in emo-tag-model.py)
