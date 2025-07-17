@@ -8,9 +8,4 @@ enableCORS = false
 gatherUsageStats = false
 
 [runner]
-# Force pip for dependency installation
 magicEnabled = true
-# Use pip instead of uv
-# Change to false to use uv (default) or if you want to experiment
-# Forcing pip often resolves tokenizers build issues
-install_with_uv = false
