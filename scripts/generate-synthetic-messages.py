@@ -8,7 +8,7 @@ import random
 NUM_MESSAGES_PER_EMOTION_TYPE = 1200 # Set this to a higher number (e.g., 250) to reach 10,000+ messages
 OLLAMA_MODEL = "llama2" # Or whatever model you are using, e.g., "llama3"
 
-# Your comprehensive list of emotions and emotion pairs
+# List of 10 least represented emotions from Go Emotions dataset and a mix of represented emotion pairs
 TARGET_EMOTIONS = [
     ['fear'],
     ['excitement'],
@@ -20,8 +20,14 @@ TARGET_EMOTIONS = [
     ['pride'],
     ['relief'],
     ['remorse'],
+    # Add more emotions and pairings as you wish:
+    ["joy", "excitement"],
+    ["desire", "remorse"],
+    ["grief", "confusion"],
+    ["pride", "surprise"],
+    ["admiration", "desire"]
 ]
-
+# Ensure the 'data/synthetic/' directory exists before running the script.
 output_file = 'data/synthetic/synthetic-emotion-data.csv'
 
 # --- Conversation Contexts for Mid-Conversation Prompts ---
