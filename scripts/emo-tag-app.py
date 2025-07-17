@@ -24,7 +24,7 @@ def load_hf_model_and_tokenizer(model_directory):
     Loads the Hugging Face tokenizer and model from the specified directory.
     Uses st.cache_resource to cache the model, preventing re-loading on every rerun.
     """
-    tokenizer = AutoTokenizer.from_pretrained(model_directory)
+    tokenizer = AutoTokenizer.from_pretrained(model_directory, local_files_only=True)
     model = AutoModelForSequenceClassification.from_pretrained(model_directory, local_files_only=True)
     model.eval() # Set model to evaluation mode
     return tokenizer, model
