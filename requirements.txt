@@ -1,7 +1,7 @@
 # requirements.txt
 
 # --- Core Machine Learning & Deep Learning ---
-torch==2.7.1             # PyTorch: Deep learning framework (explicitly used in emo-tag-app.py, emo-tag-model.py)
+torch==2.1.0+cpu        # PyTorch: Deep learning framework (explicitly used in emo-tag-app.py, emo-tag-model.py)
 transformers==4.28.1    # Hugging Face Transformers library (used in all three .py files)
 tokenizers==0.13.3
 safetensors==0.4.3       # Required for loading/saving .safetensors model weights
