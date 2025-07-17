@@ -59,6 +59,11 @@ st.markdown(
     color: black !important;
     }
 
+    /* Force specific header elements to black */
+    .st-emotion-cache-mnu3yk {
+    color: black !important;
+    }
+
     /* Icon colors in the header */
     header[data-testid="stHeader"] svg {
     fill: black !important; /* For SVG icons */
