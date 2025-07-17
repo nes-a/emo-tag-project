@@ -53,6 +53,17 @@ st.markdown(
     header[data-testid="stHeader"] {
         background-color: #f6f4e7 !important;
     }
+
+    /* Header text */
+    header[data-testid="stHeader"] .st-emotion-cache-18jrb9i { /* This targets the app title or main header text */
+    color: black !important;
+    }
+
+    /* Icon colors in the header */
+    header[data-testid="stHeader"] svg {
+    fill: black !important; /* For SVG icons */
+    color: black !important; /* Fallback/additional for some icons */
+    }
     [data-testid="stAppViewContainer"] {
         padding-top: 1rem !important;
     }
