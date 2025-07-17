@@ -1,7 +1,7 @@
 # --- Core Machine Learning & Deep Learning ---
 torch==2.3.0            # PyTorch: Stable and compatible with Python 3.12
 transformers==4.39.3    # Hugging Face Transformers: Stable version, good with torch 2.3.0
-tokenizers==0.19.1      # Tokenizers: Specific version to match transformers 4.39.3
+tokenizers==0.12.1      # Tokenizers: Specific version to match transformers 4.39.3
 safetensors==0.4.3      # Required for loading/saving .safetensors model weights
 ollama==0.1.7           # For interacting with Ollama LLM
 
