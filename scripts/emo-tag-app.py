@@ -7,7 +7,7 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
 
 import os
-MODEL_DIR = os.path.join(os.path.dirname(__file__), "..", "models", "emo_tag")
+MODEL_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "models", "emo_tag"))
 
 EMOTION_LABELS = [
     'admiration', 'amusement', 'anger', 'annoyance', 'approval',
