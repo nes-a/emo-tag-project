@@ -1,1 +1,16 @@
+[client]
+showErrorDetails = true
 
+[runner]
+# Use the specific Python version if needed, or omit for default
+# pythonVersion = "3.13.5" 
+
+[server]
+# Set this to your app's main file path relative to the repo root
+# For example, if your app is in 'scripts/emo-tag-app.py':
+# mainModule = "scripts.emo-tag-app" 
+
+[global]
+# This is where pip arguments go!
+# Force pip to only use binary wheels for pandas and numpy
+pipInstallArgs = "--only-binary pandas,numpy,:all:"
