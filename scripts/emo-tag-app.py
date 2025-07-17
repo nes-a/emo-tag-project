@@ -6,8 +6,8 @@ import seaborn as sns
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
 
-MODEL_DIR = "./models/emo_tag" # Ensure this path points to your saved model directory
-# If your model is stored elsewhere, update this path.
+import os
+MODEL_DIR = os.path.join(os.path.dirname(__file__), "..", "models", "emo_tag")
 
 EMOTION_LABELS = [
     'admiration', 'amusement', 'anger', 'annoyance', 'approval',
