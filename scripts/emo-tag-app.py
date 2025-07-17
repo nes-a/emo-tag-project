@@ -73,6 +73,11 @@ st.markdown(
         padding-top: 1rem !important;
     }
 
+    /* Override broad default white text to black */
+    .st-emotion-cache-13k62yr {
+    color: black !important;
+    }
+    
     /* Move main text down */
     .stApp p {
         margin-top: 1.6rem !important;
