@@ -1,16 +1,3 @@
-Okay, I've reviewed your `emo_tag_app.py` code, which serves as the Streamlit application for your Emo Tag model.
-
-Similar to the previous file, I've focused on removing:
-
-  * **Redundant or obvious comments**: Comments that state what the code clearly does.
-  * **Remnants of commented-out code**: Blocks that appear to be old versions of logic or temporary debugging, especially the category mappings and plotting section comments that are now fully implemented or superseded.
-  * **Placeholder comments** that don't add value for a public repository.
-
-I will keep comments that define constants, functions, or mark significant sections of the Streamlit application logic.
-
------
-
-```python
 import streamlit as st
 import numpy as np
 import pandas as pd
@@ -19,8 +6,7 @@ import seaborn as sns
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
 
-MODEL_DIR = "./models/emo_tag" # Ensure this path points to your saved model directory
-# If your model is stored elsewhere, update this path.
+MODEL_DIR = "models/emo_tag"
 
 EMOTION_LABELS = [
     'admiration', 'amusement', 'anger', 'annoyance', 'approval',
@@ -37,7 +23,7 @@ def load_hf_model_and_tokenizer(model_directory):
     Loads the Hugging Face tokenizer and model from the specified directory.
     Uses st.cache_resource to cache the model, preventing re-loading on every rerun.
     """
-    tokenizer = AutoTokenizer.from_pretrained(model_directory)
+    tokenizer = AutoTokenizer.from_pretrained(model_directory, local_files_only=True)
     model = AutoModelForSequenceClassification.from_pretrained(model_directory, local_files_only=True)
     model.eval() # Set model to evaluation mode
     return tokenizer, model
@@ -302,4 +288,3 @@ if submit_button:
             ax.set_xlim(0, 100)
             plt.title("Emotion Percentage Breakdown")
             st.pyplot(fig)
-```
