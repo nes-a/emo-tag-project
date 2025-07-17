@@ -1,10 +1,4 @@
 [client]
 showErrorDetails = true
 
-[runner]
-pythonVersion = "3.12" 
-
 [server]
-
-[global]
-pipInstallArgs = "--only-binary pandas,numpy,:all:"
