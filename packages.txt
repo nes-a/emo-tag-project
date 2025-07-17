@@ -1,1 +1,0 @@
---only-binary pandas,numpy,:all:
