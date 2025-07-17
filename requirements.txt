@@ -1,7 +1,7 @@
 # requirements.txt
 
 # --- Core Machine Learning & Deep Learning ---
-torch==2.3.1             # PyTorch: Deep learning framework (explicitly used in emo-tag-app.py, emo-tag-model.py)
+torch==2.7.1             # PyTorch: Deep learning framework (explicitly used in emo-tag-app.py, emo-tag-model.py)
 transformers==4.42.3     # Hugging Face Transformers library (used in all three .py files)
 safetensors==0.4.3       # Required for loading/saving .safetensors model weights
 ollama==0.1.7            # For interacting with Ollama LLM (used in generate-synthetic-messages.py)
