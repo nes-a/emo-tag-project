@@ -23,3 +23,6 @@ streamlit==1.36.0        # For building the web application (used in emo-tag-app
 accelerate==0.31.0       # Hugging Face Accelerate for simplified distributed training/mixed precision
                          # Often a dependency or useful alongside Transformers/PyTorch
 wandb==0.17.4            # Weights & Biases for experiment tracking (used in emo-tag-model.py)
+
+# Forced redeploy for header fix (delete this line later)
+
