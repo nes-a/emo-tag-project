@@ -5,7 +5,7 @@ import re
 import random
 
 # --- Configuration ---
-NUM_MESSAGES_PER_EMOTION_TYPE = 1200 # Set this to a higher number (e.g., 250) to reach 10,000+ messages
+NUM_MESSAGES_PER_EMOTION_TYPE = 1200 # Set this to a higher number to reach 10,000+ messages
 OLLAMA_MODEL = "llama2" # Or whatever model you are using, e.g., "llama3"
 
 # List of 10 least represented emotions from Go Emotions dataset and a mix of represented emotion pairs
