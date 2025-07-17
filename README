@@ -22,7 +22,7 @@ emotion-tagging-project/
 ├── models/
 │ └── emo-tag/ # Saved trained Hugging Face model and tokenizer
 ├── scripts/
-│ ├── generate-messages.py # Script to generate synthetic messages using Ollama
+│ ├── generate-synthetic-messages.py # Script to generate synthetic messages using Ollama
 │ ├── emo-tag-model.py # Script for model training, evaluation, and saving
 │ └── emo-tag-app.py # Streamlit web application
 ├── .gitignore # Specifies files/folders to be ignored by Git
@@ -56,10 +56,9 @@ Download Ollama: Follow the instructions on the Ollama website for your operatin
 Run Ollama: Start the Ollama server.
 
 Download a Model:
-ollama run llama2
+ollama pull llama2
 
-You can then close the chat or leave it running; the generate-messages.py script will connect to the running Ollama server.
-
+This command downloads the model. You can then close the terminal or leave it running; the generate-synthetic-messages.py script will connect to the running Ollama server." 
 ## Data Preparation
 
 ### 1. GoEmotions Dataset
@@ -68,10 +67,10 @@ Download the GoEmotions dataset and place its train.tsv, dev.tsv, and test.tsv f
 ### 2. Generate Synthetic Data (Optional but Recommended)
 To enrich your dataset, you can generate synthetic messages using a local LLM via Ollama.
 
-python scripts/generate-messages.py
+python scripts/generate-synthetic-messages.py
 This script will connect to your running Ollama instance, prompt the LLM to generate messages for various emotion types (including emotion pairs), and save them to data/synthetic/synthetic-emotion-data.csv.
 
-Note: You can adjust NUM_MESSAGES_PER_EMOTION_TYPE in generate-messages.py to control the total number of messages generated. Ensure Ollama is running and OLLAMA_MODEL in the script matches the model you pulled (e.g., "llama2").
+Note: You can adjust NUM_MESSAGES_PER_EMOTION_TYPE in generate-synthetic-messages.py to control the total number of messages generated. Ensure Ollama is running and OLLAMA_MODEL in the script matches the model you pulled (e.g., "llama2").
 
 ## Model Training
 
