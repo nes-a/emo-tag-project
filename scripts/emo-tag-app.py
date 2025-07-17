@@ -6,6 +6,8 @@ import seaborn as sns
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
 
+st.set_page_config(page_title="Emo Tag AI Assistant")
+
 MODEL_DIR = "models/emo_tag"
 
 EMOTION_LABELS = [
@@ -39,8 +41,6 @@ def preprocess_text(text, tokenizer, max_length=128):
     return tokenizer(text, return_tensors=return_tensors, truncation=True, padding="max_length", max_length=max_length)
 
 # --- Streamlit Page Configuration and Custom CSS ---
-st.set_page_config(page_title="Emo Tag AI Assistant")
-
 st.markdown(
     """
     <style>
